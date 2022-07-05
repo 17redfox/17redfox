@@ -21,14 +21,16 @@
     <div class="scene scene--card">
       <div class="card">
         <div class="card__face card__face--front avatar"></div>
-        <div class="card__face card__face--back avatar2"></div>
+        <a href="./quest.html" class="card__face card__face--back avatar2">
+            <!-- <button id="start_game">Start Game</button> -->
+        </a>
         <div class="card__face card__face--middle avatar"></div>
       </div>
     </div>
    
      
-     <h1 class="question" id="question">Хочешь увидеть что то по круче?<button id="yes">Да</button> </h1>
-     <h1 id="answer">Круче всех!!!</h1>
+     <h1 class="question" id="question"><button id="yes">Играть</button> </h1>
+     <!-- <h1 id="answer">Круче всех!!!</h1> -->
       
       
     <script>var cards = document.querySelectorAll('.card');
@@ -38,11 +40,25 @@
           document.getElementById("question").style.display="none";
           card.classList.add('is-flipped');
           setTimeout(() => {
-            document.getElementById("answer").style.display="block"
+            // document.getElementById("answer").style.display="block"
           }, 1000);
          
         });
-      });</script>
+      });
+      var card2 = document.querySelectorAll('.avatar2');
+
+      [...card2].forEach((card)=>{
+        card.addEventListener( 'click', function() {
+          // document.getElementById("question").style.display="none";
+          card.classList.add('is-flipped');
+          setTimeout(() => {
+            // document.getElementById("answer").style.display="block"
+          }, 1000);
+         
+        });
+      });
+      
+      </script>
    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
